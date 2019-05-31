@@ -1,0 +1,29 @@
+#main {
+    height: 450px;
+    text-align: center; 
+}
+#sign_up {
+    padding-top: 20px;
+}
+.login_col {
+    display: flex;
+    padding-top: 5%;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 450px;
+  }
+.signup_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 450px;
+  }
+.title_col {
+    margin-top: 18%;
+    padding: 0px;
+}
+.title {
+    margin: 6px;
+    font-size: 60px;
+}
+  
