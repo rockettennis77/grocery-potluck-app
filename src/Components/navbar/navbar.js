@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Menu, Header } from 'semantic-ui-react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+//import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+//import axios from 'axios';
 import './navbar.scss';
 
 class Navbar extends Component {
@@ -55,7 +55,6 @@ class Navbar extends Component {
         'color': KombuGreen
       }
   }
-    console.log(this.state.SignedIn)
     if(this.props.user != null){
         return(
             <div class="main">

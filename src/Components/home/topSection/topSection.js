@@ -11,7 +11,9 @@ import MiniProfile from './miniProfile/miniProfile.js';
 class TopSection extends Component {
     constructor() {
         super();
-        this.state = {};
+        this.state = {
+          infoSpot: "login"
+        };
       }
     
       switchToSignUp = () => {

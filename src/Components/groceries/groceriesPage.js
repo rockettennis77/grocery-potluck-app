@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
-import { Button, Form, Grid, Header, Image, Message, Segment, Loader } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import {Grid} from 'semantic-ui-react';
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
+//import { Link } from 'react-router-dom';
+//import axios from 'axios';
 import './groceriesPage.scss';
 
 import GroceryList from './groceryList/groceryList.js';
+import PantryList from './pantryList/pantryList.js';
+
 
 class Groceries extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null
+      user: null,
+      isRedirect: null
     };
   }
   
   componentDidMount () {
-    this.setState({user: this.props.user});
+      this.setState({user: this.props.user});
   }
   render() {
     const Gainsboro = '#DAF2DA';
@@ -50,14 +54,14 @@ class Groceries extends Component {
       <div>
         <Grid columns={2} divided> 
           <Grid.Row>
-            <Grid.Column>
+            <Grid.Column >
               <div class="gridColumn">
-                <p>GROCERY LIST</p>
+                <PantryList user={this.props.user} />
               </div>
             </Grid.Column>
             <Grid.Column class="gridColumn">
             <div class="gridColumn">
-              <p>GROCERY ADDITIONS</p>
+              <GroceryList user={this.props.user} />
             </div>
             </Grid.Column>
           </Grid.Row>

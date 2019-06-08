@@ -1,19 +1,22 @@
-.groceryListItem {
+.pantryTitle {
+    font-size: 42px;
+}
+.pantryListItem {
     color: white;
-    background-color: #7AB7C1 ;
+    background-color: #8DB580;
     padding: 10px;
     font-weight: bold;
     border-radius: 3px;
     margin-top: 8px;
 }
-.groceryListSub{
+.pantryListSub{
     font-size: 12px;
     font-weight: normal;
     padding-left: 5px;
 }
-.groceryListContainer {
+.pantryListContainer {
     max-width: 500px;
-    background-color: #C9F4FC;
+    background-color: #DAF2DA;
     padding: 15px;
     padding-bottom: 80px;
     box-shadow: inset 0px 0px 10px 0px #2E423C;

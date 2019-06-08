@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import {List, Loader, Header} from 'semantic-ui-react';
 import { BrowserRouter as Redirect } from "react-router-dom";
 import axios from 'axios';
-import './groceryList.scss';
+import './pantryList.scss';
 
-class GroceryList extends Component {
+class PantryList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       user: null,
-      groceryData: [],
-      groceryDiv: <Loader active />
+      pantryData: [],
+      pantryDiv: <Loader active />
     };
   }
   
@@ -19,25 +19,25 @@ class GroceryList extends Component {
     // var userID = this.props.user._id;
     // var grocURL = "https://grocery-potluck-app.herokuapp.com/api/userIngredients?userID=" + userID;
     // axios.get(grocURL).then((res) => {
-      var groceryData = [{Name: "Broccoli"},{Name: "Carrots"},{Name: "Peppers"}];
-      var groceryList = groceryData.map((pan) => (
-        <div class="groceryListItem">
-          <List.Item>
-              <List.Header>{pan.Name}</List.Header>
-              <div class="groceryListSub">
-                Subtitle Information
-              </div>
-          </List.Item>
-        </div>
+      var pantryData = [{Name: "Salmon"}, {Name: "Chicken"},{Name: "Pork"}]//res.data.data;
+      var pantryList = pantryData.map((pan) => (
+          <div class="pantryListItem">
+            <List.Item>
+                <List.Header>{pan.Name}</List.Header>
+                <div class="pantryListSub">
+                  Subtitle Information
+                </div>
+            </List.Item>
+          </div>
       ));
+      console.log(pantryData);
       this.setState({
         user: this.props.user,
-        groceryData: groceryData,
-        groceryDiv: groceryList
-
+        pantryData: pantryData,
+        pantryDiv: pantryList,
       });
     //});
-    return groceryData;
+    return pantryData;
   }
 
   render() {
@@ -69,15 +69,14 @@ class GroceryList extends Component {
         'background-color': CambridgeBlue
       }
     }
-    console.log(this.state.groceryData);
     return (
       <div class="main">
-        <Header as='h2'>
-          Grocery List
+        <Header as='h2' class="pantryTitle">
+          My Pantry
         </Header>
         <List size='massive'>
-          <div class='groceryListContainer'>
-            {this.state.groceryDiv}
+          <div class='pantryListContainer'>
+            {this.state.pantryDiv}
           </div>
         </List>
       </div>
@@ -85,4 +84,4 @@ class GroceryList extends Component {
   }
 }
 
-export default GroceryList;
+export default PantryList;
