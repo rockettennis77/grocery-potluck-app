@@ -1,0 +1,13 @@
+
+.search {
+    display: flex;
+    flex-direction: row;
+}
+.ui.search > .results {
+    overflow-y: auto;
+    max-height: 250px;
+  }
+.searchBar {
+    height: 380px;
+    overflow: scroll;
+}

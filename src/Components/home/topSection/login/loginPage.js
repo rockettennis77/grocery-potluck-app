@@ -49,8 +49,21 @@ class Login extends Component {
           return;
         }
         else{
-          curr.props.login(res.data.data);
-          this.setState({error: "", auth: "YES"});
+          data['password'] = pass;
+          var pantryURL = "https://grocery-potluck-app.herokuapp.com/api/pantryList?_id=" + data.PantryListID;
+          var groceryURL = "https://grocery-potluck-app.herokuapp.com/api/groceryList?_id=" + data.GroceryListID;
+          axios.get(pantryURL).then((pantryRes) => {
+            var pantry = pantryRes.data.data;
+            console.log(pantry)
+            axios.get(groceryURL).then((groceryRes) => {
+              var grocery = groceryRes.data.data;
+              console.log(grocery)
+              data['PantryList'] = pantry;
+              data['GroceryList'] = grocery;
+              curr.props.login(data);
+              this.setState({error: "", auth: "YES"});
+            });
+          });
         }
       }).catch((err) => {
         console.log(err);

@@ -65,7 +65,7 @@ class UserInfo extends Component {
                 <div class="gridCell">
                   <h2>Grocery List</h2>
                   <FontAwesomeIcon icon="shopping-basket" size="6x" style={{color: RussianGreen, margin: '20px'}}/>
-                  <p>{this.props.user.IngredientsAvailable.length} Ingredients Available</p>
+                  <p>{this.props.user.PantryList.length} Ingredients Available</p>
                 </div>
                 </Link>
               </Grid.Column>

@@ -7,6 +7,7 @@ import './App.css';
 import Home from './Components/home/homePage.js';
 import Groceries from './Components/groceries/groceriesPage.js'
 import Navbar from './Components/navbar/navbar.js';
+import Recipes from './Components/recipes/recipePage.js'
 
 class App extends Component {
   constructor() {
@@ -51,6 +52,15 @@ class App extends Component {
                 path="/potluck/groceries"
                 render = {(props) => 
                   <Groceries
+                    {...props} 
+                    user={this.state.user}
+                    />
+                }
+              />
+              <Route
+                path="/potluck/recipes"
+                render = {(props) => 
+                  <Recipes
                     {...props} 
                     user={this.state.user}
                     />
