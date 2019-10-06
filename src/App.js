@@ -66,6 +66,15 @@ class App extends Component {
                     />
                 }
               />
+              <Route 
+                path="/potluck/recipe/:id" 
+                render={({match}) => (
+                  <Recipe
+                    user={this.state.user}
+                    recipeId={match.params.id}
+                  />
+                )}
+              />
             </Switch>
         </Router>
         </div>
