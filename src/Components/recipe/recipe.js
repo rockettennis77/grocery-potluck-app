@@ -45,7 +45,7 @@ class Recipe extends Component {
             var url = APIURL + "/api/ingredient?_id=" + ingredIds[i];
             promises.push(axios.get(url));
         }
-        axios.all(url)
+        axios.all(promises).then((ingreds))
       });
   }
 

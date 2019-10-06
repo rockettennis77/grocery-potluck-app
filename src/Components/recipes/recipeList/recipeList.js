@@ -7,7 +7,6 @@ import './recipeList.scss';
 
 
 const HOSTNAME = "http://localhost:3000"
-const APIURL = "https://grocery-potluck-app.herokuapp.com"
 
 class RecipeList extends Component {
   constructor(props) {
